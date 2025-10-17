@@ -12,8 +12,12 @@ class StockMarket:
     def add_stock(self, stock: Stock):
         """
          Add a stock to the market."""
-        self.stocks[stock.stock_symbol] = stock
-        logging.info(f"Adding stock {stock.stock_symbol} to market.")
+        if stock.stock_symbol in self.stocks:
+            logging.error(f"Stock symbol {stock.stock_symbol} already exists. Cannot add duplicate.")
+            raise ValueError(f"Stock symbol {stock.stock_symbol} already exists.")
+        else:
+            logging.info(f"Adding stock {stock.stock_symbol} to market.")
+            self.stocks[stock.stock_symbol] = stock
 
     def gbce_all_share_index(self) -> float:
         """
