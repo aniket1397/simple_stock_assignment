@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
         # Add stocks
         market.add_stock(Stock('TEA', StockType.COMMON, 0, 100))
-        market.add_stock(Stock('TEA', StockType.COMMON, 0, 100))
 
         market.add_stock(Stock('POP', StockType.COMMON, 8, 100))
         market.add_stock(Stock('ALE', StockType.COMMON, 23, 60))
